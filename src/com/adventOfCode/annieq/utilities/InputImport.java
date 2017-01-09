@@ -15,6 +15,12 @@ public class InputImport {
 		br = new BufferedReader(new FileReader(filename));
 	}
 
+	/**
+	 * return list of strings from single line, split into chunks
+	 * @param delimiter
+	 * @return
+	 * @throws IOException
+	 */
 	public List<String> getSingleLineData(String delimiter) throws IOException {
 		List<String> result = new ArrayList<String>();
 		String line = br.readLine();
@@ -23,6 +29,20 @@ public class InputImport {
 		return result;
 	}
 	
+	/**
+	 * returns first line from the file. No splitting.
+	 * @return
+	 * @throws IOException
+	 */
+	public String getSingleLineData() throws IOException {
+	    return br.readLine();
+	}
+	
+	/**
+	 * returns list of strings. Each line becomes single item in the list
+	 * @return
+	 * @throws IOException
+	 */
 	public ArrayList<String> getMultiLineData() throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 		String line = br.readLine();
