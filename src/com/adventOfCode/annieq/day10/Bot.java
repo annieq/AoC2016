@@ -5,18 +5,18 @@ public class Bot {
     // always start putting values to 'low'
     private Integer low = null;
     private Integer high = null;
-    private int id;
+    private Integer id;
     
-    Bot(int id) {
+    public Bot(int id) {
         this.id = id;
     }
     
-    Bot(int id, Integer a) {
+    public Bot(int id, Integer a) {
         this.id = id;
         low = a;
     }
     
-    Bot(int id, Integer a, Integer b) {
+    public Bot(int id, Integer a, Integer b) {
         this.id = id;
         
         if (a <= b) {
@@ -28,7 +28,7 @@ public class Bot {
         }
     }
     
-    void addChip(int value) {
+    public void addChip(int value) {
         if (low == null) {
             low = value;
             return;
@@ -42,15 +42,47 @@ public class Bot {
         }
     }
     
-    int getLow() {
+    public int getLow() {
         return low;
     }
     
-    int getHigh() {
+    public int getHigh() {
         return high;
     }
     
-    int getId() {
+    public int getId() {
         return id;
+    }
+    
+    public String toString() {
+    	return id.toString();
+    }
+    
+//    /**
+//     * frees low hand and returns its value. If bot has something in high hand, it's moved to low
+//     * @return low (given) value
+//     */
+//    public int giveLowExt() {
+//    	
+//    }
+    
+    /**
+     * frees low hand and returns its value
+     * @return low (given) value
+     */
+    public int giveLow() {
+    	int tmp = low;
+    	low = null;
+    	return tmp;
+    }
+    
+    /**
+     * frees high hand and returns its value
+     * @return high (given) value
+     */
+    public int giveHigh() {
+    	int tmp = high;
+    	high = null;
+    	return tmp;
     }
 }
