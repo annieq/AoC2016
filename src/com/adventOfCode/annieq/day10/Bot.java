@@ -85,4 +85,8 @@ public class Bot {
     	high = null;
     	return tmp;
     }
+    
+    public boolean hasTwoValues() {
+    	return (low != null && high != null);
+    }
 }
