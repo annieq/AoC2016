@@ -11,6 +11,7 @@ import com.adventOfCode.annieq.utilities.InputImport;
 public class Part1 {
 
 	private static Map<Integer, Bot> bots;
+	private static Map<Integer, Integer> outputs;
     private static List<String> queue;
 	
     public static void main(String[] args) throws IOException {
