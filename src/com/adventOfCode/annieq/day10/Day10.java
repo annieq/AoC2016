@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.adventOfCode.annieq.utilities.InputImport;
 
-public class Part1_New {
+public class Day10 {
 
 	private static BotsMap bots;
 	private static Map<Integer, Integer> outputs;
