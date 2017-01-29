@@ -37,20 +37,22 @@ public class Part1_New {
             }
             int result = bots.checkTaskCondition(17, 61);
             if (result != -1) {
-            	System.out.println(result);
-            	break;
+            	System.out.println("Part 1 answer: " + result);
+//            	break;
             }
         }
         while(!queue.isEmpty()) {
         	checkQueue(queue);
             int result = bots.checkTaskCondition(17, 61);
             if (result != -1) {
-            	System.out.println(result);
-            	break;
+            	System.out.println("Part 1 answer: " + result);
+//            	break;
             }
         }
         System.out.println("Bots: " + bots);
         System.out.println("Outputs: " + outputs);
+        
+        System.out.println("Part 2 answer: " + outputs.get(0) * outputs.get(1) * outputs.get(2));
     }
     
     private static void compareAndGiveValues(String line) {
@@ -81,6 +83,12 @@ public class Part1_New {
             if (bots.get(botId).hasTwoValues()) {
             	compareAndGiveValues(line);
             	it.remove();
+            }
+
+            int result = bots.checkTaskCondition(17, 61);
+            if (result != -1) {
+                System.out.println("Part 1 answer: " + result);
+//                return;
             }
     	}
     }
