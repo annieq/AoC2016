@@ -19,7 +19,7 @@ public class Part1 {
     	goal = new Coords(31, 39);
     	path = new ArrayList<Coords>();
     	
-    	go(position.x(), position.y());
+    	System.out.println(go(position.x(), position.y()));
     }
     
     private static boolean isOpenSpace(int x, int y) {
@@ -33,30 +33,35 @@ public class Part1 {
     	return (count % 2 == 0);
     }
     
-    private static void go(int x, int y) {
+    private static boolean go(int x, int y) {
     	position.setX(x);
     	position.setY(y);
-    	path.add(position);
     	if (position == goal) {
     		System.out.println("FOUND!");
-    		return;
+    		return true;
     	}
     	System.out.println("(" + x + ", " + y + ")");
     	if (isOpenSpace(x, y+1) && !positionIsInPath(x, y+1)) {
+    		path.add(new Coords(x, y+1));
     		go (x, y+1);
     	}
     	if (isOpenSpace(x+1, y) && !positionIsInPath(x+1, y)) {
+    		path.add(new Coords(x+1, y));
     		go (x+1, y);
     	}
     	if (isOpenSpace(x, y-1) && !positionIsInPath(x, y-1)) {
+    		path.add(new Coords(x, y-1));
     		go(x, y-1);
     	}
     	if (isOpenSpace(x-1, y) && !positionIsInPath(x-1, y)) {
+    		path.add(new Coords(x-1, y));
     		go(x-1, y);
     	}
+    	return false;
     }
     
     private static boolean positionIsInPath(int x, int y) {
-    	return (path.contains(new int[] {x, y}));
+    	Coords tmp = new Coords(x, y);
+    	return (path.contains(tmp));
     }
 }
