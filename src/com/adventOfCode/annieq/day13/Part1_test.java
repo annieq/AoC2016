@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.adventOfCode.annieq.day1.Coords;
 
-public class Part1 {
+public class Part1_test {
 	// puzzle input
-	static int input = 1362;
+	static int input = 10;
 	
 	static List<Coords> path;
 	static Coords position;
@@ -16,7 +16,7 @@ public class Part1 {
     public static void main(String[] args) {
     	position = new Coords(1, 1);
     	//position = new int[] {1, 1};
-    	goal = new Coords(31, 39);
+    	goal = new Coords(7,4);
     	path = new ArrayList<Coords>();
     	
     	System.out.println(go(position.x(), position.y()));
